@@ -1,0 +1,51 @@
+@import '../styles/mixins'; 
+.projects {
+  min-height: 100vh;
+  padding: 4rem 0;  
+  .container.single-project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+  }  
+  .project-card.single-project-card {
+    @include card-style;
+    max-width: 500px;
+    width: 100%;
+    padding: 2.5rem;
+    text-align: center;   
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      @include gradient-text;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      color: rgba($dark-color, 0.8);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .technologies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+      gap: 0.5rem;
+      span {
+        display: inline-block;
+        background: linear-gradient(135deg, $primary-color, $info-color);
+        color: $white;
+        padding: 0.4rem 0.9rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+    }
+    .btn {
+      margin-top: 1rem;
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+    }
+  }
+}

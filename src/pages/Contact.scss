@@ -1,0 +1,52 @@
+@import '../styles/mixins'; 
+.contact {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba($primary-color, 0.03), rgba($info-color, 0.03));
+  
+  .container {
+    max-width: 700px;
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      @include gradient-text;
+    }
+
+    .contact-details {
+      @include card-style;
+      padding: 3rem;
+      
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: rgba($dark-color, 0.8);
+        
+        strong {
+          color: $primary-color;
+          font-weight: 600;
+        }
+        
+        a {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 500;
+          
+          &::after {
+            content: "→";
+            @include transition;
+            opacity: 0;
+          }
+          
+          &:hover {
+            &::after {
+              opacity: 1;
+              transform: translateX(4px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

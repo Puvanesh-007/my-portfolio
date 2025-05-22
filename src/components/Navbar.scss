@@ -1,0 +1,108 @@
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(30, 30, 40, 0.95) 0%, rgba(50, 50, 70, 0.95) 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 1.2rem 3rem;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:hover {
+    background: linear-gradient(90deg, rgba(40, 40, 55, 0.98) 0%, rgba(60, 60, 85, 0.98) 100%);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 4rem;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      padding: 0.8rem 1.5rem;
+      position: relative;
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, $purple, $primary-color);
+        transition: all 0.4s ease;
+      }
+
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+
+      &:hover {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+        &::before,
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        box-shadow: 0 0 15px rgba(142, 68, 173, 0.4);
+
+        &::before,
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    padding: 1rem 2rem;
+    ul {
+      gap: 2rem;
+      a {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 1rem;
+    ul {
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

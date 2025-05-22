@@ -1,0 +1,43 @@
+.blue-title {
+  color: #3498db;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .content-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #495057;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        background: #f1f3f5;
+        color: #2c3e50;
+        padding: 0.7rem 1rem;
+        border-radius: 5px;
+        margin-bottom: 0.7rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
